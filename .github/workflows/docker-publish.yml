@@ -90,3 +90,18 @@ jobs:
         # This step uses the identity token to provision an ephemeral certificate
         # against the sigstore community Fulcio instance.
         run: echo "${{ steps.meta.outputs.tags }}" | xargs -I {} cosign sign {}@${{ steps.build-and-push.outputs.digest }}
+    
+  CD_part:
+
+    runs-on: self-hosted
+    needs: build
+
+    steps:
+
+      - name: Pull Docker image
+        uses: docker pull ghcr.io/rsadevops/hulitinerabotaesh:sha256-2f483fb19fd65fed0ffb308c234cbbbe23d947604ca08fb0540ab6d8c6dd2928.sig
+
+      - name: Check
+        run: docker ps -a
+
+
