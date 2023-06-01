@@ -99,7 +99,7 @@ jobs:
     steps:
 
       - name: Pull Docker image
-        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:sha256-2f483fb19fd65fed0ffb308c234cbbbe23d947604ca08fb0540ab6d8c6dd2928.sig
+        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:main
 
       - name: Check
         run: docker images
