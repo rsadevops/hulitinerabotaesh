@@ -98,10 +98,10 @@ jobs:
 
     steps:
 
-      - name: Pull Docker image
-        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:main
+      #- name: Pull Docker image
+      #  run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:main
 
-      - name: Check
-        run: docker images
+      - name: Start docker image
+        run: docker run -d -rm -p 80:80 rsadevops/hulitinerabotaesh:main
 
 
