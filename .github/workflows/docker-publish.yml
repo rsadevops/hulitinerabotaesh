@@ -102,6 +102,6 @@ jobs:
       #  run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:main
 
       - name: Start docker image
-        run: docker run -d -rm -p 80:80 rsadevops/hulitinerabotaesh:main
+        run: docker run -d -p 80:80 rsadevops/hulitinerabotaesh:main
 
 
