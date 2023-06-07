@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           
       #- name: Git Version
-       # uses: codacy/git-version@2.4.0
+      #  uses: codacy/git-version@2.4.0
       #- name: Use the version
       #  run: |
       #    echo ${{ steps.version.outputs.version }}
@@ -32,9 +32,9 @@ jobs:
       #  run: |
       #    echo ${{ steps.version.outputs.previous-version }}    
                     
-      #- name: Build and push Docker images
-      #  uses: docker/build-push-action@v4.0.0
-      #  with:
-      #    context: .
-      #    push: true
-      #    tags: ${{ github.repository }}:latest
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v4.0.0
+        with:
+          context: .
+          push: true
+          tags: ${{ github.repository }}:latest
