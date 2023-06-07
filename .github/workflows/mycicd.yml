@@ -28,7 +28,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:latest
+          tags: ${{ github.actor }}/${{  }}:latest
           
       - name: Git Version
         uses: codacy/git-version@2.4.0
