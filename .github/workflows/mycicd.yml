@@ -35,7 +35,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4.4.0
         with: 
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ github.sha }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push
         id: build-and-push
@@ -45,5 +45,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
