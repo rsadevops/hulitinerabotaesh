@@ -1,0 +1,15 @@
+name: MAIN
+
+on:
+  push:
+    branches: main
+    
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  VERSION: main
+  PORT: '80:80'
+  
+jobs:
+  call-reuse-workflow:
+    uses: ./.github/workflows/ci-cd.yml
