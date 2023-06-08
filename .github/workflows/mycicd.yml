@@ -45,3 +45,15 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          
+  CD:
+  
+    runs-on: self-hosted
+    needs: [CI]
+    
+    steps:
+      - name: Pull Docker images
+        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:main
+        
+      - name: Docker container start
+        run: docker run -d -p 80:80 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
