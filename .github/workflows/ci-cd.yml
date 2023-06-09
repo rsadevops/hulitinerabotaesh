@@ -43,7 +43,7 @@ jobs:
       - name: Docker Login
         uses: docker/login-action@v2.1.0
         with:
-          registry: ${{ github.event.inputs.REGISTRY }}
+          registry: ${{ inputs.REGISTRY }}
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       
@@ -54,7 +54,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4.4.0
         with: 
-          images: ${{ github.event.inputs.REGISTRY }}/${{ github.event.inputs.IMAGE_NAME }}
+          images: ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}
 
       - name: Build and push
         id: build-and-push
@@ -72,7 +72,7 @@ jobs:
     
     steps:
       - name: Pull Docker images
-        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:${{ github.event.inputs.VERSION }}
+        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:${{ inputs.VERSION }}
         
       - name: Docker container start
-        run: docker run -d -p ${{ github.event.inputs.PORT }} ${{ github.event.inputs.REGISTRY }}/${{ github.event.inputs.IMAGE_NAME }}:${{ github.event.inputs.VERSION }}
+        run: docker run -d -p ${{ inputs.PORT }} ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }}
