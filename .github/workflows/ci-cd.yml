@@ -75,7 +75,7 @@ jobs:
         run: docker pull ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }}
         
       - name: Remove old container
-        run: docker rm -f ${{ inputs.IMAGE_NAME }} || true
+        run: docker rm -f ${{ inputs.CONTAINER }} || true
         
       - name: Docker container start
-        run: docker run -d -p ${{ inputs.PORT }} ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }} --name ${{ inputs.IMAGE_NAME }}
+        run: docker run -d -p ${{ inputs.PORT }} --name ${{ inputs.CONTAINER }} ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }}
