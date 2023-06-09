@@ -16,6 +16,7 @@ jobs:
       IMAGE_NAME: ${{ github.repository }}
       VERSION: main
       PORT: '80:80'
+      CONTAINER: dev_build
     secrets: 
       REGISTRY_USERNAME: ${{ github.actor }}
       REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
