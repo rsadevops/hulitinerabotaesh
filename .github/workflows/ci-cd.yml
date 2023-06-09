@@ -15,9 +15,9 @@ on:
         type: string
       CONTAINER:
         type: string
-      branch:
-        default: 'main'
-        type: string
+      #branch:
+       # default: 'main'
+        #type: string
     secrets:
       REGISTRY_USERNAME:
         required: true
@@ -36,8 +36,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          ref: ${inputs.branch}
+        #with:
+        #  ref: ${inputs.branch}
         
       - name: Docker Login
         uses: docker/login-action@v2.1.0
