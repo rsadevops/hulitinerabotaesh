@@ -3,13 +3,7 @@ name: MAIN
 on:
   push:
     branches: main
-    
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  VERSION: main
-  PORT: '80:80'
-  
+      
 jobs:
   call-reuse-workflow:
     permissions:
@@ -17,3 +11,11 @@ jobs:
       packages: write
       id-token: write
     uses: ./.github/workflows/ci-cd.yml
+    with:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
+      VERSION: main
+      PORT: '80:80'
+    secrets: 
+      REGISTRY_USERNAME: ${{ github.actor }}
+      REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
