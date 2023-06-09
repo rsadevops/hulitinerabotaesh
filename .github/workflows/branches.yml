@@ -1,0 +1,19 @@
+name: BRANCHES
+on:
+  push:
+    branches: ['dev']
+  workflow_dispatch:
+          
+jobs:
+  call-reuse-workflow:
+    name: Call CI/CD action
+    uses: ./.github/workflows/ci-cd.yml
+    with:
+      REGISTRY: ghcr.io
+      IMAGE_NAME: ${{ github.repository }}
+      VERSION: dev
+      PORT: '8080:8080'
+      CONTAINER: dev_build
+    secrets: 
+      REGISTRY_USERNAME: ${{ github.actor }}
+      REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
