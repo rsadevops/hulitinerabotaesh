@@ -1,9 +1,5 @@
 name: CI/CD
 
-#on:
-#  push:
-#    branches: ['main']
-
 on:
   workflow_call:
     inputs:
@@ -24,10 +20,6 @@ on:
         required: true
       REGISTRY_PASSWORD:
         required: true
-
-#env:
-#  REGISTRY: ghcr.io
-#  IMAGE_NAME: ${{ github.repository }}
     
 jobs:
   CI:
