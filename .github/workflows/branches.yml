@@ -13,7 +13,7 @@ jobs:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}
       VERSION: main
-      PORT: '5000:8080'
+      PORT: '8080:5000'
       CONTAINER: dev_build
     secrets: 
       REGISTRY_USERNAME: ${{ github.actor }}
