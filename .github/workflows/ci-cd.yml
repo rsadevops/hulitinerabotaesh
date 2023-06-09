@@ -72,7 +72,7 @@ jobs:
     
     steps:
       - name: Pull Docker images
-        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh:${{ inputs.VERSION }}
+        run: docker pull ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }}
         
       - name: Docker container start
         run: docker run -d -p ${{ inputs.PORT }} ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }}
