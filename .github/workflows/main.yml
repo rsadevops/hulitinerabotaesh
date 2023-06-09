@@ -3,10 +3,7 @@ on:
   push:
     branches: ['main']
   workflow_dispatch:
-    
-  #push:
-  # branches: main
-      
+          
 jobs:
   call-reuse-workflow:
     name: Call CI/CD action
