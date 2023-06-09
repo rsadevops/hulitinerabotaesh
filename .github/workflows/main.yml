@@ -10,7 +10,7 @@ jobs:
       contents: read
       packages: write
       id-token: write
-    uses: ./.github/workflows/ci-cd.yml
+    uses: rsadevops/hulitinerabotaesh/.github/workflows/ci-cd.yml@main
     with:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}
