@@ -7,13 +7,21 @@ name: CI/CD
 on:
   workflow_call:
     inputs:
-      REGISTRY: 
+      REGISTRY:
+        default: 'ghcr.io'
+        required: true
+        type: string
       IMAGE_NAME:
+        type: string
       VERSION:
+        type: string
       PORT:
+        type: string
     secrets:
       REGISTRY_USERNAME:
+        required: true
       REGISTRY_PASSWORD:
+        required: true
 
 #env:
 #  REGISTRY: ghcr.io
