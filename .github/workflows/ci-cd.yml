@@ -16,6 +16,7 @@ on:
       CONTAINER:
         type: string
       branch:
+        default: 'main'
         type: string
     secrets:
       REGISTRY_USERNAME:
