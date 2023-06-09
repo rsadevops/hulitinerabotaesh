@@ -6,10 +6,10 @@ on:
       
 jobs:
   call-reuse-workflow:
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
+  #  permissions:
+  #    contents: read
+  #    packages: write
+  #    id-token: write
     uses: rsadevops/hulitinerabotaesh/.github/workflows/ci-cd.yml@main
     with:
       REGISTRY: ghcr.io
