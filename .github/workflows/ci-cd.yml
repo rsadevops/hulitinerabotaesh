@@ -17,6 +17,8 @@ on:
         type: string
       PORT:
         type: string
+      CONTAINER:
+        type: string
     secrets:
       REGISTRY_USERNAME:
         required: true
