@@ -9,8 +9,6 @@ on:
         type: string
       IMAGE_NAME:
         type: string
-      VERSION:
-        type: string
       PORT:
         type: string
       CONTAINER:
@@ -55,13 +53,9 @@ jobs:
         with: 
           images: ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
-
+            type=latest
+            type=date,pattern={{date 'YYYYMMDD-HHmmss' tz='Europe/Minsk'}}
+            
       - name: Build and push
         id: build-and-push
         uses: docker/build-push-action@v4
@@ -78,10 +72,10 @@ jobs:
     
     steps:
       - name: Pull Docker images
-        run: docker pull ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }}
+        run: docker pull ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:latest
         
       - name: Remove old container
         run: docker rm -f ${{ inputs.CONTAINER }} || true
         
       - name: Docker container start
-        run: docker run -d -p ${{ inputs.PORT }} --name ${{ inputs.CONTAINER }} ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:${{ inputs.VERSION }}
+        run: docker run -d -p ${{ inputs.PORT }} --name ${{ inputs.CONTAINER }} ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}:latest
