@@ -54,6 +54,13 @@ jobs:
         uses: docker/metadata-action@v4.4.0
         with: 
           images: ${{ inputs.REGISTRY }}/${{ inputs.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=sha
 
       - name: Build and push
         id: build-and-push
