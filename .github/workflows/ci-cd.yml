@@ -57,7 +57,7 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=raw,value={{date 'YYYYMMDD-HHmmss' tz='Europe/Minsk'}}
             type=ref,event=branch,priority=200
-            type=semver,pattern={{raw}}
+            type=semver,pattern={{version}},value=v1.0.0
         
       - name: Build and push
         id: build-and-push
