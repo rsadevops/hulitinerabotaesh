@@ -47,7 +47,7 @@ jobs:
           
       - name: Version autogeneration
         id: tag
-        env:
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod +x ./scripts/generate_version.sh
