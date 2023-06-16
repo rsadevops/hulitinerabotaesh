@@ -1,9 +1,8 @@
 #!/bin/bash
 
 #Set Git user identity
-actor=${1}
-git config --global user.email "${actor}@users.noreply.github.com"
-git config --global user.name "${actor}"
+git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config --global user.name "${GITHUB_ACTOR}"
 
 #Determine version
 commit_message=$(git log --format=%s -n 1)
