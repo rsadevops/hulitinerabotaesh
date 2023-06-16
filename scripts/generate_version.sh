@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Set Git user identity
-#git config --global user.email "raman.sauchuk@devstream.by"
-#git config --global user.name "rsadevops"
+git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config --global user.name "${GITHUB_ACTOR}"
 
 #Determine version
 commit_message=$(git log --format=%s -n 1)
