@@ -20,6 +20,7 @@ on:
         required: true
       REGISTRY_PASSWORD:
         required: true
+        
     
 jobs:
   CI:
@@ -48,7 +49,7 @@ jobs:
         id: tag
         run: |
           chmod +x ./scripts/generate_version.sh
-          bash ./scripts/generate_version.sh
+          bash ./scripts/generate_version.sh ${{ GITHUB_ACTOR }}
       
       - name: Build docker image
         run: docker build -f .Dockerfile --platform=linux/amd64 --tag ghcr.io/hulitinerabotaesh/${{ steps.tag.outputs.new_version }}:latest .
