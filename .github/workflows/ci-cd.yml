@@ -56,9 +56,6 @@ jobs:
         run: |
           chmod +x ./scripts/generate_version.sh
           bash ./scripts/generate_version.sh
-          git add package.json
-          git commit -m "Bump version to $new_version"
-          git push --quiet
         #env:
         #  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
       # git remote set-url origin "https://${{secrets.BOT_TOKEN}}@github.com/rsadevops/hulitinerabotaesh.git"

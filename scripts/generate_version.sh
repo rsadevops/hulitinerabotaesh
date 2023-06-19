@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#BOT_TOKEN=${1}
-
 #Set Git user identity
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git config --global user.name "${GITHUB_ACTOR}"
@@ -29,9 +27,6 @@ echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
 npm --no-git-tag-version version $new_version --allow-same-version
 
-#git add package.json
-#git commit -m "Bump version to $new_version"
-#git remote set-url origin "https://${BOT_TOKEN}@github.com/rsadevops/hulitinerabotaesh.git"
-#git push --quiet
-
-# 213
+git add package.json
+git commit -m "Bump version to $new_version"
+git push --quiet
