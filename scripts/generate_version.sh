@@ -29,5 +29,6 @@ npm --no-git-tag-version version $new_version --allow-same-version
 
 git add package.json
 git commit -m "Bump version to $new_version"
-git push "https://github.com/${inputs.IMAGE_NAME}" HEAD:refs/heads/main --quiet --force --follow-tags -u "${{ secrets.REGISTRY_PASSWORD }}"
+git remote set-url origin "https://github.com/rsadevops/hulitinerabotaesh/?access_token=${REGISTRY_PASSWORD}"
+git push --quiet
 
