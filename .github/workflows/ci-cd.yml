@@ -55,9 +55,9 @@ jobs:
           bash ./scripts/generate_version.sh
           git add package.json
           git commit -m "Bump version to $new_version"
-          git remote set-url origin "https://${{secrets.BOT_TOKEN}}@github.com/rsadevops/hulitinerabotaesh.git"
-          git push --quiet
-         
+          git push https://${{secrets.BOT_TOKEN}}@github.com/rsadevops/hulitinerabotaesh.git --quiet
+        # git remote set-url origin "https://${{secrets.BOT_TOKEN}}@github.com/rsadevops/hulitinerabotaesh.git"
+                   
       #- name: Build docker image
       #  run: docker build -f .Dockerfile --platform=linux/amd64 --tag ghcr.io/hulitinerabotaesh/${{ steps.tag.outputs.new_version }}:latest .
         
