@@ -20,6 +20,8 @@ on:
         required: true
       REGISTRY_PASSWORD:
         required: true
+      BOT_TOKEN:
+        required: true
 
 permissions:
   repository-projects: write

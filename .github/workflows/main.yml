@@ -17,3 +17,4 @@ jobs:
     secrets: 
       REGISTRY_USERNAME: ${{ github.actor }}
       REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
