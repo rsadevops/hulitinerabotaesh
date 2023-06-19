@@ -29,6 +29,6 @@ npm --no-git-tag-version version $new_version --allow-same-version
 
 git add package.json
 git commit -m "Bump version to $new_version"
-git remote set-url origin "https://${secrets.REGISTRY_PASSWORD}@github.com/rsadevops/hulitinerabotaesh.git"
+git remote set-url origin "https://${secrets.bot_token}@github.com/rsadevops/hulitinerabotaesh.git"
 git push --quiet
 
