@@ -29,4 +29,5 @@ npm --no-git-tag-version version $new_version --allow-same-version
 
 git add package.json
 git commit -m "Bump version to $new_version"
-#git push --quiet https://$GITHUB_TOKEN@github.com/rsadevops/hulitinerabotaesh.git
+git push "https://github.com/${{ github.repository }}" HEAD:refs/heads/main --quiet --force --follow-tags -u "${{ secrets.REGISTRY_PASSWORD }}"
+
