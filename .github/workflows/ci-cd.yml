@@ -23,8 +23,8 @@ on:
       BOT_TOKEN:
         required: true
 
-permissions:
-  repository-projects: write
+#permissions:
+#  repository-projects: write
         
     
 jobs:
@@ -58,9 +58,9 @@ jobs:
           bash ./scripts/generate_version.sh
           git add package.json
           git commit -m "Bump version to $new_version"
-          git push "https://github.com/rsadevops/hulitinerabotaesh.git" --quiet
-        env:
-          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+          git push --quiet
+        #env:
+        #  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
       # git remote set-url origin "https://${{secrets.BOT_TOKEN}}@github.com/rsadevops/hulitinerabotaesh.git"
                    
       #- name: Build docker image
