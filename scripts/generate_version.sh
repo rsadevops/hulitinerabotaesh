@@ -29,4 +29,4 @@ npm --no-git-tag-version version $new_version --allow-same-version
 
 git add package.json
 git commit -m "Bump version to $new_version"
-git push --quiet
+git push --quiet --no-verify -o ci.skip
