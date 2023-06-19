@@ -55,10 +55,10 @@ jobs:
           bash ./scripts/generate_version.sh
                    
       - name: Build docker image
-        run: docker build -f ./Dockerfile --platform=linux/amd64 --tag ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }}:latest .
+        run: docker build -f ./Dockerfile --platform=linux/amd64 --tag ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }} .
         
       - name: Push docker image
-        run: docker push ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }}:latest
+        run: docker push ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }}
         
           
   CD:
@@ -68,10 +68,10 @@ jobs:
     
     steps:
       - name: Pull Docker images
-        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }}:latest
+        run: docker pull ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }}
         
       - name: Remove old container
         run: docker rm -f ${{ inputs.CONTAINER }} || true
         
       - name: Docker container start
-        run: docker run -d -p ${{ inputs.PORT }} --name ${{ inputs.CONTAINER }} ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }}:latest
+        run: docker run -d -p ${{ inputs.PORT }} --name ${{ inputs.CONTAINER }} ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ steps.tag.outputs.new_version }}
