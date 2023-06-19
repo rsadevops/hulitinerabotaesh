@@ -55,7 +55,7 @@ jobs:
           bash ./scripts/generate_version.sh
                    
       - name: Build docker image
-        run: docker build -f .Dockerfile --platform=linux/amd64 --tag ghcr.io/hulitinerabotaesh/${{ steps.tag.outputs.new_version }}:latest .
+        run: docker build -f ./Dockerfile --platform=linux/amd64 --tag ghcr.io/hulitinerabotaesh/${{ steps.tag.outputs.new_version }}:latest .
         
       - name: Push docker image
         run: docker push ghcr.io/hulitinerabotaesh/${{ steps.tag.outputs.new_version }}:latest
