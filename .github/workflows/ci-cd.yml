@@ -41,7 +41,7 @@ jobs:
         with:
           repository: ${{ github.repository }}
           ref: ${{ inputs.branch }}
-          token: ${{ secrets.REGISTRY_PASSWORD }}
+          token: ${{ secrets.BOT_TOKEN }}
         
       - name: Docker Login
         uses: docker/login-action@v2.1.0
