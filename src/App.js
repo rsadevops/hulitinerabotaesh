@@ -1,3 +1,4 @@
+require('newrelic');
 import logo from './logo.svg';
 import './App.css';
 
