@@ -82,4 +82,4 @@ jobs:
         run: docker rm -f ${{ inputs.CONTAINER }} || true
         
       - name: Docker container start
-        run: docker run -d -p ${{ inputs.PORT }} --name ${{ inputs.CONTAINER }} ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ needs.CI.outputs.version }}
+        run: docker run -d -e NEW_RELIC_LICENSE_KEY=59663c86e752ee785745160bf9ec06eeFFFFNRAL -e NEW_RELIC_APP_NAME="my-test-app" -p ${{ inputs.PORT }} --name ${{ inputs.CONTAINER }} ghcr.io/rsadevops/hulitinerabotaesh/${{ inputs.branch }}:${{ needs.CI.outputs.version }}
