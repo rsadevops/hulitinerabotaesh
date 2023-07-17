@@ -1,6 +1,6 @@
 {
   "name": "hulitinerabotaesh",
-  "version": "0.2.5-2",
+  "version": "0.2.5-3",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
