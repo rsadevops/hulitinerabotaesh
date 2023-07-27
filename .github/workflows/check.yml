@@ -12,5 +12,6 @@ jobs:
       
     - name: start script
       run: |
+        touch text.txt < echo ${{ vars.CUM_IN_MOUSE }}
         chmod +x scripts/onetwo.sh
-        bash scripts/onetwo.sh ${{ vars.CUM_IN_MOUSE }}
+        bash scripts/onetwo.sh $(cat text.txt)
