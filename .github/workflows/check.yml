@@ -1,0 +1,16 @@
+name: Check
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: start script
+      run: |
+        chmod +x scripts/onetwo.sh
+        bash script/onetwo.sh ${{ vars.TEST }}
