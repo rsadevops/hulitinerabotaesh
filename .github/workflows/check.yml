@@ -13,4 +13,4 @@ jobs:
     - name: start script
       run: |
         chmod +x scripts/onetwo.sh
-        bash script/onetwo.sh ${{ vars.TEST }}
+        bash scripts/onetwo.sh ${{ vars.TEST }}
