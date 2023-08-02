@@ -14,13 +14,17 @@ on:
           - 'Manual bump'
       q2:
         description: 'Type build number(only for manual):'
-        type: text
+        type: string
         required: false
       q3:
         description: 'Type version(only for manual):'
-        type: text
+        type: string
         required: false
 
 jobs:
   Call:
-    runs-on: 
+    uses: ./.github/workflows/called.yml
+    with:
+      q1: ${{ inputs.q1 }}
+      q2: ${{ inputs.q2 }}
+      q3: ${{ inputs.q3 }}
