@@ -24,7 +24,7 @@ jobs:
         run: |
           if [[ "${{ inputs.q1 }}" == "Yes" ]]; then
             echo "Yes"
-          elif [[ "${{ inputs.q1 }}" == "Manual" ]]; then
+          elif [[ "${{ inputs.q1 }}" == "Manual bump" ]]; then
             echo ${{ inputs.q2}}
             echo ${{ inputs.q3}}
           else
