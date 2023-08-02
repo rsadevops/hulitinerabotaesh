@@ -2,6 +2,24 @@ name: Check
 
 on:
   workflow_dispatch:
+    inputs:
+      q1:
+        description: Bump version?
+        type: choice
+        required: true
+        default: 'No'
+        options:
+          - 'Yes'
+          - 'No'
+          - 'Manual bump'
+      q2:
+        description: 'Type build number(only for manual):'
+        type: text
+        required: false
+      q3:
+        description: 'Type version(only for manual):'
+        type: text
+        required: false
     
 jobs:
   checkout:
