@@ -1,6 +1,15 @@
 name: MAIN
 on:
   workflow_dispatch:
+    inputs: 
+      logLevel:
+        description: 'Bump version?'
+        required: true
+        default: 'no'
+        type: choice
+        options:
+          - yes
+          - no
           
 jobs:
   call-reuse-workflow:
