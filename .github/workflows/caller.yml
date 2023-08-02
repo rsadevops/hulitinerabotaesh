@@ -3,6 +3,10 @@ name: Input test workflow
 on:
   workflow_dispatch:
     inputs:
+      currentVersion:
+        description: 'Current version:'
+        type: string
+        default: $(cat testversion)
       q1:
         description: Bump version?
         type: choice
