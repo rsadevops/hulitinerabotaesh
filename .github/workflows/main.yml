@@ -2,7 +2,7 @@ name: MAIN
 on:
   workflow_dispatch:
     inputs: 
-      logLevel:
+      q1:
         description: 'Bump version?'
         required: true
         default: 'no'
@@ -10,6 +10,10 @@ on:
         options:
          - 'yes'
          - 'no'
+      q2:
+        description: Manual bump
+        required: false
+        type: text
           
 jobs:
   call-reuse-workflow:
