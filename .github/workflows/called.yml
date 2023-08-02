@@ -34,4 +34,7 @@ jobs:
           else
             echo "No bump"
           fi
+      - name: Break test
+        run: |
+          echo "If you see that message, then your shit doesn't work"
      
