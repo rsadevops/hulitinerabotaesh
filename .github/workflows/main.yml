@@ -5,11 +5,11 @@ on:
       logLevel:
         description: 'Bump version?'
         required: true
-        default: 'false'
+        default: 'no'
         type: choice
         options:
-         - yes
-         - no
+         - 'yes'
+         - 'no'
           
 jobs:
   call-reuse-workflow:
