@@ -1,0 +1,33 @@
+name: Template for Caller.yml
+
+on: 
+  workflow_call:
+    inputs: 
+      q1:
+        required: true
+        type: string
+      q2:
+        required: false
+        type: string
+      q3:
+        required: false
+        type: string
+
+jobs:
+  Build:
+    name: Test on ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Output
+        run: |
+          if: [[ "${{ inputs.q1 }}" == "Yes" ]]; then
+          echo "Yes"
+          elif: [[ "${{ inputs.q1 }}" == "Manual" ]]; then
+          echo ${{ inputs.q2}}
+          echo ${{ inputs.q3}}
+          else:
+            echo "No bump"
+          fi
+     
