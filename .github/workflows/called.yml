@@ -23,10 +23,10 @@ jobs:
       - name: Output
         run: |
           if: [[ "${{ inputs.q1 }}" == "Yes" ]]; then
-          echo "Yes"
+            echo "Yes"
           elif: [[ "${{ inputs.q1 }}" == "Manual" ]]; then
-          echo ${{ inputs.q2}}
-          echo ${{ inputs.q3}}
+            echo ${{ inputs.q2}}
+            echo ${{ inputs.q3}}
           else:
             echo "No bump"
           fi
