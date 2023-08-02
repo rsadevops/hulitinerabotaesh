@@ -25,12 +25,8 @@ jobs:
           if [[ "${{ inputs.q1 }}" == "Yes" ]]; then
             echo "Yes"
           elif [[ "${{ inputs.q1 }}" == "Manual bump" ]]; then
-            if [[ "${{ inputs.q2 }}" =~ ^[0-999]+$ ]]; then
+            if [[ "${{ inputs.q2 }}" =~ ^[0-999]+$ && "${{ inputs.q3 }}" =~ ^[0-999]+([.][0-999]+)+([.][0-999]+)?$ ]]; then
               echo ${{ inputs.q2 }}
-            else
-              echo "False"
-            fi
-            if [[ "${{ inputs.q3 }}" =~ ^[0-999]+([.][0-999]+)+([.][0-999]+)?$ ]]; then
               echo ${{ inputs.q3 }}
             else
               echo "False"
