@@ -8,5 +8,7 @@ jobs:
     steps:
        - name: Where i am?
          run: |
-           pwd
-           ls -ial
+           cd ~/linktest/dir2/
+           rm somefile.conf
+           ln -s ~/linktest/dir1/secondfile.conf
+           ls -lia
