@@ -1,0 +1,13 @@
+name: Maintenance mode
+
+on: [workflow_dispatch]
+
+jobs:
+  Enable-maintenance-mode:
+    runs-on: self-hosted
+    steps:
+       - name: Where i am?
+         run: |
+         pwd
+         ls
+    
