@@ -6,7 +6,7 @@ jobs:
   Enable-maintenance-mode:
     runs-on: self-hosted
     steps:
-       - name: Where i am?
+       - name: Enable mode
          run: |
            cd ~/linktest/dir2/
            rm somefile.conf
