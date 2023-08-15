@@ -8,10 +8,9 @@ jobs:
         name: Initiate OS
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v3.5.3
             - name: Install dependencies
               run: |
-                cd ./scripts
-                ls
-                pwd
-                #chmod +x ./scripts/packages_cleanup.py
-                #py ./scripts/packages_cleanup.py 'work'
+                chmod +x ./scripts/packages_cleanup.py
+                py ./scripts/packages_cleanup.py 'work'
