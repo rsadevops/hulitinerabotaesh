@@ -3,5 +3,5 @@ import requests
 import sys
 
 test = sys.argv[0]
-print(test)
+print(f'{test}')
 print('done')
