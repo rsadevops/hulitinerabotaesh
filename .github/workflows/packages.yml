@@ -10,7 +10,8 @@ jobs:
         steps:
             - name: Install dependencies
               run: |
-                pwd
+                cd ./scripts
                 ls
-                chmod +x ./scripts/packages_cleanup.py
-                py ./scripts/packages_cleanup.py 'work'
+                pwd
+                #chmod +x ./scripts/packages_cleanup.py
+                #py ./scripts/packages_cleanup.py 'work'
