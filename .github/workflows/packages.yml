@@ -1,0 +1,14 @@
+name: Packages cleanup
+
+on: 
+    workflow_dispatch: 
+
+jobs:
+    Cleanup:
+        name: Initiate OS
+        runs-on: ubuntu-latest
+        steps:
+            - name: Install dependencies
+              run: |
+                pip freeze
+                pip list
