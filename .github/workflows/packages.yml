@@ -10,5 +10,9 @@ jobs:
         steps:
             - name: Install dependencies
               run: |
+                apt-get update -y && apt-get upgrade -y
+                pip3 install sys requests
                 pip freeze
+                pip3 freeze
                 pip list
+                pip3 list
