@@ -12,5 +12,5 @@ jobs:
               run: |
                 pwd
                 ls
-                chmod +x scripts/packages_cleanup.py
-                py scripts/packages_cleanup.py 'work'
+                sudo chmod +x /scripts/packages_cleanup.py
+                py /scripts/packages_cleanup.py 'work'
