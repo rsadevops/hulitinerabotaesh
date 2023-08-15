@@ -11,4 +11,4 @@ jobs:
             - name: Install dependencies
               run: |
                 chmod +x scripts/packages_cleanup.py
-                py scripts/packages_cleanup.py
+                py scripts/packages_cleanup.py 'work'
