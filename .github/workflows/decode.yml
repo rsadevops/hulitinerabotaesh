@@ -9,5 +9,5 @@ jobs:
     - name: Decode
       run: |
         echo ${{ secrets.DECODE_TEST }} | base64 -d > service_account.json
-        echo "SERVICE_ACCOUNT_JSON=service_account.json" >> $GITHUB_OUTPUT
+        echo "SERVICE_ACCOUNT_JSON=service_account.json" >> $GITHUB_ENV
 
