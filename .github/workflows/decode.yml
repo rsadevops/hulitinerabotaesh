@@ -11,5 +11,5 @@ jobs:
         SERVICE_ACCOUNT_JSON: service-account.json
         TEST_ENV: ${{ secrets.DECODE_TEST }}
       run: |
-        echo -n "$TEST_ENV" | base64 -d > "$SERVICE_ACCOUNT_JSON"
+        echo $TEST_ENV | base64 -di > $SERVICE_ACCOUNT_JSON
 
