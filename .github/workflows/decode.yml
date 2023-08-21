@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Decode
-      env:
-        TEST_ENV: ${{ secrets.DECODE_TEST }}
       run: |
-        echo $TEST_ENV | base64 -di > $SERVICE_ACCOUNT_JSON
+        echo ${{ secrets.DECODE_TEST }} | base64 -d > service_account.json
+        echo "SERVICE_ACCOUNT_JSON=service_account.json" >> $GITHUB_OUTPUT
 
