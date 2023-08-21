@@ -8,7 +8,6 @@ jobs:
     steps:
     - name: Decode
       env:
-        SERVICE_ACCOUNT_JSON: service-account.json
         TEST_ENV: ${{ secrets.DECODE_TEST }}
       run: |
         echo $TEST_ENV | base64 -di > $SERVICE_ACCOUNT_JSON
